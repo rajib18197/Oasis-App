@@ -73,8 +73,8 @@ function Header({ children }) {
   );
 }
 
-function Body({ children }) {
-  return <StyledBody>{children}</StyledBody>;
+function Body({ render, data, children }) {
+  return <StyledBody>{data.map(render)}</StyledBody>;
 }
 
 function Row({ children }) {

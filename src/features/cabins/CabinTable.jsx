@@ -35,7 +35,7 @@ export default function CabinTable() {
         }
       : filterValueRaw;
 
-  console.log(filterValue);
+  // console.log(filterValue);
 
   if (filterValue === "all") filteredCabins = cabins;
 
@@ -48,7 +48,7 @@ export default function CabinTable() {
       );
     });
 
-  console.log(filteredCabins);
+  // console.log(filteredCabins);
 
   return (
     <Menus>
@@ -62,11 +62,13 @@ export default function CabinTable() {
           <div></div>
         </Table.Header>
 
-        <Table.Body>
-          {filteredCabins.map((cabin) => (
+        <Table.Body
+          render={(cabin) => <CabinRow key={cabin.id} cabin={cabin} />}
+          data={filteredCabins}
+        />
+        {/* {filteredCabins.map((cabin) => (
             <CabinRow key={cabin.id} cabin={cabin} />
-          ))}
-        </Table.Body>
+          ))} */}
       </Table>
     </Menus>
   );

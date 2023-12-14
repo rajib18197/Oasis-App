@@ -76,6 +76,7 @@ export default function Filter({ filterFields, options }) {
               ? "true"
               : undefined
           }
+          disabled={currentFilterValue === urlFilterSting(option.value)}
           onClick={() =>
             handleClick({
               number: option.value?.number,
