@@ -3,12 +3,13 @@ import Table from "../../ui/Table";
 import { format } from "date-fns";
 import { formatCurrency } from "../../utils/helpers";
 import Menus from "../../ui/Menus";
-import { HiPencil, HiTrash } from "react-icons/hi2";
+import { HiDocumentDuplicate, HiPencil, HiTrash } from "react-icons/hi2";
 import { useDeleteCabin } from "./useDeleteCabin";
 import Modal from "../../ui/Modal";
 import ConfirmDelete from "../../ui/ConfirmDelete";
 import CreateCabinForm from "./CreateCabinForm";
 import { useUpdateCabin } from "./useUpdateCabin";
+import { useCreateCabin } from "./useCreateCabin";
 
 const Img = styled.img`
   display: block;
@@ -54,6 +55,14 @@ export default function CabinRow({ cabin }) {
     error: deleteError,
   } = useDeleteCabin();
 
+  const { createCabin, isPending, isError } = useCreateCabin();
+
+  function handleDuplicate() {
+    createCabin({
+      newCabin: { name, image, regularPrice, discount, maxCapacity },
+    });
+  }
+
   return (
     <Table.Row>
       <Img src={image} alt={name} />
@@ -66,6 +75,13 @@ export default function CabinRow({ cabin }) {
           <Modal>
             <Menus.Toggle id={cabinId} />
             <Menus.List windowId={cabinId}>
+              <Menus.Button
+                icon={<HiDocumentDuplicate />}
+                onClick={handleDuplicate}
+              >
+                Duplicate
+              </Menus.Button>
+
               <Modal.Open name="update-cabin">
                 <Menus.Button icon={<HiPencil />}>Update</Menus.Button>
               </Modal.Open>

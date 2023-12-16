@@ -90,3 +90,28 @@ export default function Filter({ filterFields, options }) {
     </StyledFilter>
   );
 }
+
+export function FilterRegular({ filterFields, options }) {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const filter = searchParams.get(filterFields) || options.at(0).value;
+
+  function handleClick(value) {
+    searchParams.set(filterFields, value);
+    setSearchParams(searchParams);
+  }
+
+  return (
+    <StyledFilter>
+      {options.map((option) => (
+        <FilterButton
+          key={option.value}
+          onClick={() => handleClick(option.value)}
+          active={filter === option.value ? "true" : ""}
+          disabled={filter === option.value}
+        >
+          {option.label}
+        </FilterButton>
+      ))}
+    </StyledFilter>
+  );
+}

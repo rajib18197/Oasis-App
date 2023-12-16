@@ -26,7 +26,7 @@ export default function App() {
             <Route element={<AppLayout />}>
               <Route index element={<Navigate to="cabins" />} />
               <Route path="cabins" element={<Cabins />} />
-              <Route path="booking" element={<Bookings />} />
+              <Route path="bookings" element={<Bookings />} />
               <Route path="users" element={<Users />} />
               <Route path="accounts" element={<Accounts />} />
               <Route path="settings" element={<Settings />} />

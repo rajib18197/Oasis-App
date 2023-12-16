@@ -1,3 +1,19 @@
+import BookingsTable from "../features/bookings/BookingsTable";
+import BookingsTableOperations from "../features/bookings/BookingsTableOperations";
+import Heading from "../ui/Heading";
+import Row from "../ui/Row";
+
 export default function Bookings() {
-  return <h2>Bookings</h2>;
+  return (
+    <>
+      <Row type="horizontal">
+        <Heading>Bookings List</Heading>
+        <BookingsTableOperations />
+      </Row>
+
+      <Row>
+        <BookingsTable />
+      </Row>
+    </>
+  );
 }
