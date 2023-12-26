@@ -16,7 +16,7 @@ export function useCreateCabin() {
     },
   });
 
-  console.log(results);
+  // console.log(results);
 
   const {
     mutate: createCabin,
