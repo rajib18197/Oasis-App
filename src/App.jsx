@@ -12,6 +12,7 @@ import ProtectedRoute from "./ui/ProtectedRoute";
 import Router, { Running, Sports } from "./features/customRoutes/Router";
 import Link from "./ui/Link";
 import NavigationProvider from "./contexts/NavigationContext";
+import Calender from "./ui/Calender";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -39,13 +40,13 @@ export default function App() {
               <Route path="cabins" element={<Cabins />} />
               <Route path="bookings" element={<Bookings />} />
               <Route path="users" element={<Users />} />
-              <Route path="accounts" element={<Accounts />} />
+              <Route path="accounts" element={<Calender />} />
               <Route path="settings" element={<Settings />} />
             </Route>
-            {/* <Route path="login" element={<Login />} /> */}
+            <Route path="login" element={<Login />} />
           </Routes>
         </BrowserRouter>
-        <div>
+        {/* <div>
           <Link to={"/sports"} activeClass={{ backgroundColor: "#3d5ecc" }}>
             Sports
           </Link>
@@ -55,7 +56,7 @@ export default function App() {
 
           <Router path="/sports" element={<Sports />} />
           <Router path="/running" element={<Running />} />
-        </div>
+        </div> */}
       </QueryClientProvider>
     </NavigationProvider>
   );

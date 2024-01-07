@@ -42,3 +42,5 @@ export function useNavigation() {
 
   return context;
 }
+
+// Hi everyone. hope things are going well by your side. I have recently completed my portfolio. Your feedback would be immensely helpful for me. I have also distilled down projects explanation on the portfolio. Your insights would be highly appeciatiable and means a lot to me, If you have a moment to look at it.
