@@ -131,3 +131,9 @@ export default function Calender() {
     </StyledCalender>
   );
 }
+
+// The Two Reacts - Dan Abramov
+// Tk dodo - React query Blog (1, 2, 4, 8)
+// React.dev - Escape Hatch - first 5 articles
+// RTK query Basics
+// Mark erikson Context vs Redux
