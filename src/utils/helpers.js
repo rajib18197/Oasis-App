@@ -28,3 +28,53 @@ export const formatCurrency = (value) =>
   new Intl.NumberFormat("en", { style: "currency", currency: "USD" }).format(
     value
   );
+
+function parenthesis(str) {
+  let count = 0;
+  let arr = [];
+
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] === "(") {
+      arr.push("(");
+      count = count + 1;
+    }
+    if (str[i] === ")") {
+      if (arr.at(-1) === "(") {
+        count = count - 1;
+        arr.pop();
+      } else {
+        count = count + 1;
+      }
+    }
+  }
+
+  console.log(count);
+}
+
+parenthesis(")((()");
+parenthesis("())");
+
+const counter = function (str) {
+  let count = 0;
+  let letter = str[0];
+  let str2 = "";
+  for (let i = 0; i < str.length; i++) {
+    const newLetter = str[i];
+    if (letter === newLetter) {
+      count += 1;
+      letter = newLetter;
+    } else {
+      str2 += `${letter}${count}`;
+      count = 1;
+      letter = str[i];
+    }
+  }
+
+  str2 += `${letter}${count}`;
+
+  console.log(str2);
+};
+
+counter("abbdcaas");
+counter("abcd");
+counter("aabbc");
