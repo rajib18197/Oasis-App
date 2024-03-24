@@ -42,5 +42,43 @@ export function registrationReducer(state, action) {
         },
       };
     }
+
+    case "VALIDATE_FIELD": {
+      const { name, value } = action.payload;
+
+      const errorMsg = validateInput(state, name, value);
+
+      if (errorMsg[name]) {
+        return {
+          ...state,
+          [name]: {
+            ...state[name],
+            error: errorMsg[name],
+          },
+        };
+      }
+
+      return { ...state, [name]: { ...state[name], error: null } };
+    }
+
+    case "RESET_ERROR": {
+      return {
+        ...state,
+        [action.payload]: { ...state[action.payload], error: null },
+      };
+    }
+
+    case "RESET_ALL_INPUTS": {
+      const nextState = {};
+      // for resetting
+      const keys = Object.keys(state);
+
+      for (let key of keys) {
+        nextState[key] = { ...state[key], value: "", error: null };
+      }
+
+      console.log(nextState);
+      return nextState;
+    }
   }
 }
