@@ -1,8 +1,5 @@
 import { useReducer } from "react";
-import {
-  initialState,
-  registrationReducer,
-} from "../features/authentication/registrationReducer";
+import { initialState, registrationReducer } from "./registrationReducer";
 
 export function useForm() {
   const [state, dispatch] = useReducer(registrationReducer, initialState);
