@@ -23,3 +23,24 @@ function validateInput(state, inputName, value) {
 
   return error;
 }
+
+export function registrationReducer(state, action) {
+  switch (action.type) {
+    case "ADD_INPUT": {
+      return {
+        ...state,
+        [action.payload.field]: action.payload.info,
+      };
+    }
+
+    case "CHANGE_VALUE": {
+      return {
+        ...state,
+        [action.payload.name]: {
+          ...state[action.payload.name],
+          value: action.payload.value,
+        },
+      };
+    }
+  }
+}
