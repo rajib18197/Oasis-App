@@ -34,7 +34,7 @@ export function useAxios() {
             originalRequest._retry = true;
 
             try {
-              const refreshToken = authData.token.refreshToken;
+              const refreshToken = authData?.token?.refreshToken;
 
               const response = await axios.post(
                 `${import.meta.env.VITE_SERVER_BASE_URL}/auth/refresh-token`,
@@ -70,5 +70,6 @@ export function useAxios() {
 
     [authToken]
   );
+
   return { api };
 }
