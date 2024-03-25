@@ -22,7 +22,6 @@ export function useQuery({ queryKey, queryFn }) {
           setData(results);
         }
       } catch (err) {
-        console.error(err);
         setIsError(err);
       } finally {
         setIsLoading(false);
