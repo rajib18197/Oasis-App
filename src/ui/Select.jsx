@@ -17,7 +17,7 @@ const StyledSelect = styled.select`
   box-shadow: var(--shadow-sm);
 `;
 
-function Select({ options, value, ...props }, ref) {
+export default forwardRef(function Select({ options, value, ...props }, ref) {
   return (
     <StyledSelect value={value} {...props} ref={ref}>
       {options.map((option) => (
@@ -27,6 +27,6 @@ function Select({ options, value, ...props }, ref) {
       ))}
     </StyledSelect>
   );
-}
+});
 
-export default forwardRef(Select);
+// export default forwardRef(Select);
