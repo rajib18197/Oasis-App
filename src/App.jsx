@@ -46,17 +46,6 @@ export default function App() {
             <Route path="login" element={<Login />} />
           </Routes>
         </BrowserRouter>
-        {/* <div>
-          <Link to={"/sports"} activeClass={{ backgroundColor: "#3d5ecc" }}>
-            Sports
-          </Link>
-          <Link to={"/running"} activeClass={{ backgroundColor: "#3d5ecc" }}>
-            Running
-          </Link>
-
-          <Router path="/sports" element={<Sports />} />
-          <Router path="/running" element={<Running />} />
-        </div> */}
       </QueryClientProvider>
     </NavigationProvider>
   );
