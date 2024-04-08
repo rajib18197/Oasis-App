@@ -472,7 +472,7 @@ calcLongestSubArrLength(
   )
 );
 
-const calcLongestSubArrLength = function (arr) {
+const calcLongestSubArrLength2 = function (arr) {
   let maxSubArrLength = 0;
 
   for (let i = 0; i < arr.length; i++) {
@@ -494,7 +494,7 @@ const calcLongestSubArrLength = function (arr) {
   return maxSubArrLength;
 };
 
-calcLongestSubArrLength([
+calcLongestSubArrLength2([
   0, 15, 66, -66, -15, -36, 43, -41, 36, 13, 25, -52, 52, 28, -56, 26, 19, -17,
   0, 52, 20, 24, -44,
 ]);
