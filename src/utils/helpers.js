@@ -429,3 +429,38 @@ export const sortByNumber = function (numbers, asc = "true") {
   const sort = numbers.slice().sort((a, b) => (a - b) * modifier);
   return sort;
 };
+
+// const arr = [1, 3, -1, 4, -4, 1, -1]; // 1 4 3 7 3 4 3
+const arr = [1, 3, -1, 4, -4]; // 1 4 3 7 3
+
+const calcLongestSubArrLength = function (arr) {
+  let maxSubArrLength = 0;
+
+  let sum = 0;
+  let mapArr = new Map();
+
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];
+
+    // 1 0 4 1 3 2 7 3 3 4
+    console.log(mapArr, sum);
+    if (sum === 0) {
+      maxSubArrLength = Math.max(maxSubArrLength, i + 1);
+    }
+
+    if (mapArr.has(sum)) {
+      maxSubArrLength = Math.max(maxSubArrLength, i - mapArr.get(sum));
+    } else {
+      mapArr.set(sum, i);
+    }
+  }
+
+  console.log(maxSubArrLength, "return");
+  return maxSubArrLength;
+};
+
+// const transformArr = function (nums) {
+//   return nums.split(" ").map((el) => Number(el));
+// };
+
+calcLongestSubArrLength(arr);
