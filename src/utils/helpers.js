@@ -464,37 +464,37 @@ const transformArr = function (nums) {
 };
 
 calcLongestSubArrLength(arr);
-// calcLongestSubArrLength([1, -1, 2, -2]);
-// calcLongestSubArrLength([4, -5, 1]);
-// calcLongestSubArrLength(
-//   transformArr(
-//     "0 15 66 -66 -15 -36 43 -41 36 13 25 -52 52 28 -56 26 19 -17 0 52 20 24 -44"
-//   )
-// );
+calcLongestSubArrLength([1, -1, 2, -2]);
+calcLongestSubArrLength([4, -5, 1]);
+calcLongestSubArrLength(
+  transformArr(
+    "0 15 66 -66 -15 -36 43 -41 36 13 25 -52 52 28 -56 26 19 -17 0 52 20 24 -44"
+  )
+);
 
-// const calcLongestSubArrLength = function (arr) {
-//   let maxSubArrLength = 0;
+const calcLongestSubArrLength = function (arr) {
+  let maxSubArrLength = 0;
 
-//   for (let i = 0; i < arr.length; i++) {
-//     let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    let sum = 0;
 
-//     for (let j = i; j < arr.length; j++) {
-//       sum += arr[j];
-//     }
+    for (let j = i; j < arr.length; j++) {
+      sum += arr[j];
+    }
 
-//     let subArrLength = arr.length - i;
-//     console.log(maxSubArrLength, sum, 111111);
+    let subArrLength = arr.length - i;
+    console.log(maxSubArrLength, sum, 111111);
 
-//     if (sum === 0 && maxSubArrLength < subArrLength) {
-//       maxSubArrLength = subArrLength;
-//     }
-//   }
+    if (sum === 0 && maxSubArrLength < subArrLength) {
+      maxSubArrLength = subArrLength;
+    }
+  }
 
-//   console.log(maxSubArrLength);
-//   return maxSubArrLength;
-// };
+  console.log(maxSubArrLength);
+  return maxSubArrLength;
+};
 
-// calcLongestSubArrLength([
-//   0, 15, 66, -66, -15, -36, 43, -41, 36, 13, 25, -52, 52, 28, -56, 26, 19, -17,
-//   0, 52, 20, 24, -44,
-// ]);
+calcLongestSubArrLength([
+  0, 15, 66, -66, -15, -36, 43, -41, 36, 13, 25, -52, 52, 28, -56, 26, 19, -17,
+  0, 52, 20, 24, -44,
+]);
